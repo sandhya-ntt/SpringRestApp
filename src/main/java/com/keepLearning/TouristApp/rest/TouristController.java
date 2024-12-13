@@ -53,7 +53,11 @@ public class TouristController {
         }
     }
 
-
+    @DeleteMapping("/api/update-tourist/{id}/{budget}")
+    public ResponseEntity<String> deleteTourist(@PathVariable("id") Integer id) {
+        String Response= service.deleteTourist(id);
+        return new ResponseEntity<String>(Response, HttpStatus.OK);
+    }
 
 
 }
